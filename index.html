@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Downloader</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        label, input {
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        #download-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Video Downloader</h1>
+        <form id="download-form">
+            <label for="video-url">Enter Video URL:</label>
+            <input type="text" id="video-url" name="video-url" required>
+            <button type="submit">Download</button>
+        </form>
+        <div id="download-link" style="display: none;">
+            <a id="link" href="" download>Click here to download</a>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.getElementById("download-form");
+            const downloadLink = document.getElementById("download-link");
+            const link = document.getElementById("link");
+
+            form.addEventListener("submit", async function(event) {
+                event.preventDefault();
+                const videoUrl = document.getElementById("video-url").value;
+                
+                // You would need to implement the video download logic here
+                
+                // For demonstration purposes, generating a placeholder link
+                const placeholderDownloadLink = "https://example.com/path/to/download";
+                
+                link.href = placeholderDownloadLink;
+                downloadLink.style.display = "block";
+            });
+        });
+    </script>
+</body>
+</html>
